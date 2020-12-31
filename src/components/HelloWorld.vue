@@ -40,6 +40,12 @@ export default defineComponent({
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  setup (props, context) {
+    // props 本身也是响应式对象。
+    console.log(props)
+    // 在Vue3的setup函数中，我们无法this。可以借助 context 的属性去
+    context.emit('')
   }
 })
 </script>
